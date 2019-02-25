@@ -9,7 +9,8 @@ puts "such that each row, column, and 3x3 subgrid contains exactly"
 puts "one instance of each number 1-9"
 puts "************************"
 
-puts "Here's a template you can copy & paste: \n[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]]"
+puts "Here's a template you can copy & paste to get you started:"
+puts "[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]]"
 puts "\nPlease enter a 9x9 sudoku board below in the form of a valid 2D int array, 0 representing empty cells: "
 input = Readline::readline.chomp
 board = YAML.load(input)
@@ -69,13 +70,11 @@ end
 if !is_valid_size(board)
   puts "Invalid size input, re-run the script to try again" 
   exit
-else 
-  if is_valid_board(board)
-    puts "\nNice input board, let's solve this!"
-  else
-    puts "Board cannot be solved"
-    exit
-  end
+elsif !is_valid_board(board)
+  puts "Board cannot be solved"
+  exit
+else
+  puts "\nNice input board, let's try to solve this!"
 end
 
 def sudoku_solve(grid)
