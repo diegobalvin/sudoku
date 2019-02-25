@@ -12,6 +12,7 @@ puts "************************"
 puts "Here's a template you can copy & paste to get you started:"
 puts "[[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]]"
 puts "\nPlease enter a 9x9 sudoku board below in the form of a valid 2D int array, 0 representing empty cells: "
+
 input = Readline::readline.chomp
 board = YAML.load(input)
 board.flatten
